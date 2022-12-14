@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="/liquorstore-master/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="login">
+                                                                                <br>
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="text" name="userName" placeholder="user_name" id="user_name" required="">
+					<input type="password" name="pswd" placeholder="Password" id="user_pass" required="">
+					<button onclick="signIn()" >Login</button>
+				</form>
+			</div>
+	</div>
+
+                    <script >
+
+                                        function getData(){
+                                            let user_data =   JSON.parse(localStorage.getItem("user_data"));
+                                            return user_data;
+                                        }
+                                        //  var data = getData();
+                                        //  console.log(data);
+                                      
+                                      function signIn(){
+                                      
+                                           let data = getData();
+                                      
+                                           let user_name = document.getElementById('user_name').value;
+                                           let user_pass = document.getElementById('user_pass').value;
+                                      
+                                           if (data.user_name == user_name && data.user_pass == user_pass) {
+                                            window.location.href = "index.html";
+                                                alert("login success");
+                                               
+                                           } else {
+                                             alert("login fail");
+                                           }
+                                         }
+                                          </script>
+</body>
+</html>

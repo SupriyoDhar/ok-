@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="/liquorstore-master/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" id="user_name" required="">
+					<input type="email" name="email" placeholder="Email" id="email" required="">
+					<input type="password" name="pswd" placeholder="Password" id="user_pass" required="">
+					<center><a href="/liquorstore-master/login.html" class="btn btn-dark text-white "   onclick="signUp()">Sign Up</a></center>
+                                                                                                    
+				</form>
+			</div>
+
+			
+	</div>
+
+                    <script>
+                                        function signUp(){
+                                
+                                        const userData = {
+                                            user_name: document.getElementById('user_name').value,
+                                            email:document.getElementById('email').value,
+                                            user_pass:document.getElementById('user_pass').value
+                                            
+                                        };
+                                
+                                        localStorage.setItem("user_data", JSON.stringify(userData));
+                                        }
+                                    </script>    
+</body>
+</html>
